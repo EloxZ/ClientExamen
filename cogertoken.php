@@ -21,10 +21,10 @@ try {
 
     $_SESSION['oauth2state'] = $provider->getState();
 
-} catch (\League\OAuth2\Client\Provider\Exception\IdentityProviderException $e) {
+} catch (Exception $e) {
 
     // Failed to get the access token
-    exit($e->getMessage());
+    echo $e->getMessage();
 
 }
 
