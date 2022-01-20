@@ -8,6 +8,7 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'redirectUri'             => 'https://google.es/',
     'urlAuthorize'            => 'https://examenserver.herokuapp.com/oauth/auth',
     'urlAccessToken'          => 'https://examenserver.herokuapp.com/oauth/token',
+    'urlResourceOwnerDetails' => 'https://service.example.com/resource'
 ]);
 
 try {
