@@ -1,5 +1,7 @@
 <?php
 
+require_once('./vendor/autoload.php');
+
 $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'clientId'                => 'application',    // The client ID assigned to you by the provider
     'clientSecret'            => 'secret',    // The client password assigned to you by the provider
