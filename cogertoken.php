@@ -6,9 +6,8 @@ $provider = new \League\OAuth2\Client\Provider\GenericProvider([
     'clientId'                => 'application',    // The client ID assigned to you by the provider
     'clientSecret'            => 'secret',    // The client password assigned to you by the provider
     'redirectUri'             => 'https://google.es/',
-    'urlAuthorize'            => 'https://service.example.com/authorize',
+    'urlAuthorize'            => 'https://examenserver.herokuapp.com/oauth/auth',
     'urlAccessToken'          => 'https://examenserver.herokuapp.com/oauth/token',
-    'urlResourceOwnerDetails' => 'https://service.example.com/resource'
 ]);
 
 try {
