@@ -18,30 +18,16 @@
                 <div class="d-flex justify-content-center py-3">
                     <ul class="nav nav-pills">
                         <li class="nav-item">
-                            <h1><a href="../index.php">Home</a></h1>
+                            <a href="../index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <?php if (!isset($_SESSION['usuario']->admin)) {?>
-                                <h1><a href="../myaccount.php">Mi Perfil</a></h1>    
-                            <?php }?>
-                        </li>
-                        <li class="nav-item">
-                            <a href="../viaje/crear_viaje.php" class="nav-link">Publicar viaje</a>
+                            <a href="../articulo/crear_articulo.php" class="nav-link">Publicar articulo</a>
                         </li>
                         <?php
-
                         if (!isset($_SESSION['login'])) {
                             header('Location: ../login.php');
-                        } else if (isset($_SESSION['login']) && isset($_SESSION['admin'])) {
+                        } else {
                         ?>
-                            <li class="nav-item">
-                                <a href="admin/admin.php" class="nav-link">Panel de administración</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="logout.php" class="nav-link">Cerrar sesión</a>
-                            </li>
-                        <?php
-                        } else { ?>
                             <li class="nav-item">
                                 <a href="logout.php" class="nav-link">Cerrar sesión</a>
                             </li>
