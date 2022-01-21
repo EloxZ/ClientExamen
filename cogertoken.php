@@ -17,7 +17,7 @@ if (!isset($_SESSION['token'])) {
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $token = curl_exec($ch);
 
-        $_SESSION['token'] = json_encode($token);
+        $_SESSION['token'] = $token;
         var_dump($token);
         echo curl_error($ch);
         curl_close ($ch);
