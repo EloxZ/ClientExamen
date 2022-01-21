@@ -3,14 +3,14 @@
 
 try {
     $post = [
+        'grant_type'   => 'password',
         'username' => 'pedroetb',
-        'password' => 'password',
-        'grant_type'   => 'password'
+        'password' => 'password'
     ];
     
     $headers = [
-        'Content-Type: application/x-www-form-urlencoded',
-        'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0'
+        'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0',
+        'Content-Type: application/x-www-form-urlencoded'
     ];
 
     $ch = curl_init('https://www.examenserver.herokuapp.com/oauth/token');
