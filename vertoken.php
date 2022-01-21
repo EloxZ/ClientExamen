@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['token'])) {
     
     $tokenJson = json_encode($_SESSION['token']);
-    var_dump($tokenJson);
+    //var_dump($tokenJson);
     echo $tokenJson->accessToken;
 
     $ch = curl_init('https://examenserver.herokuapp.com/oauth/auth');
