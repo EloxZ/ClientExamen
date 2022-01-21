@@ -26,7 +26,7 @@ if (!isset($_SESSION['token'])) {
     } catch (Exception $e) {
 
         // Failed to get the access token
-        echo $e->getMessage();
+        echo 'Es un error '.$e->getMessage();
     }
 }
 
