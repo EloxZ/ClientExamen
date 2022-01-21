@@ -3,7 +3,7 @@
 if (!isset($_SESSION['token'])) {
     try {
         $post = array (
-            'grant_type'   => 'password',
+            'grant_type' => 'password',
             'username' => 'pedroetb',
             'password' => 'password'
         );
