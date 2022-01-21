@@ -1,25 +1,28 @@
 <?php
 
-require_once('./vendor/autoload.php');
+$post = [
+    'username' => 'pedroetb',
+    'password' => 'password',
+    'grant_type'   => 'password'
+];
 
-$provider = new \League\OAuth2\Client\Provider\GenericProvider([
-    'clientId'                => 'application',    // The client ID assigned to you by the provider
-    'clientSecret'            => 'secret',    // The client password assigned to you by the provider
-    'redirectUri'             => 'https://google.es/',
-    'urlAuthorize'            => 'https://examenserver.herokuapp.com/oauth/auth',
-    'urlAccessToken'          => 'https://examenserver.herokuapp.com/oauth/token',
-    'urlResourceOwnerDetails' => 'https://service.example.com/resource'
-]);
+$headers = [
+    'Content-Type: application/x-www-form-urlencoded',
+    'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0'
+];
+
+
 
 try {
 
-    // Try to get an access token using the resource owner password credentials grant.
-    $accessToken = $provider->getAccessToken('password', [
-        'username' => 'pedroetb',
-        'password' => 'password'
-    ]);
+    $ch = curl_init('https://www.examenserver.herokuapp.com/oauth/token');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    $token = curl_exec($ch);
 
-    $_SESSION['oauth2state'] = $provider->getState();
+    $_SESSION['token'] = $token;
+    curl_close ($ch);
 
 } catch (Exception $e) {
 
