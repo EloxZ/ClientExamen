@@ -12,9 +12,8 @@ if (!isset($_SESSION['token'])) {
             'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0'
         );
 
-        $ch = curl_init('https://www.examenserver.herokuapp.com/oauth/token');
+        $ch = curl_init('https://examenserver.herokuapp.com/oauth/token');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);

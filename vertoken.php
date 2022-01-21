@@ -4,7 +4,7 @@
 if (isset($_SESSION['token'])) {
     var_dump($_SESSION['token']);
 
-    $ch = curl_init('https://www.examenserver.herokuapp.com/oauth/auth');
+    $ch = curl_init('https://examenserver.herokuapp.com/oauth/auth');
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HEADER, 'Authorization: Bearer '.$_SESSION['token']['accessToken']);
     $data = curl_exec($ch);
