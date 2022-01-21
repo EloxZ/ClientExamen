@@ -15,12 +15,14 @@ if (!isset($_SESSION['token'])) {
         $ch = curl_init('https://www.examenserver.herokuapp.com/oauth/token');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         $token = curl_exec($ch);
 
         $_SESSION['token'] = $token;
         var_dump($token);
+        echo curl_error($ch);
         curl_close ($ch);
 
     } catch (Exception $e) {
