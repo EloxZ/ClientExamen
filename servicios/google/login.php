@@ -4,9 +4,9 @@ require_once '../../vendor/autoload.php';
 
 session_start();
 
-$clienteID = '355043429392-p0keh6com6lldp10dkdificgl44f2unc.apps.googleusercontent.com';
-$clientSecret = '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';
-$redirectUrl = 'http://examenclient.herokuapp.com';
+$clienteID = '574746681145-t8st72oje98d84ga085idtn0g94orkk8.apps.googleusercontent.com';
+$clientSecret = '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';
+$redirectUrl = 'http://examenclient.herokuapp.com/servicios/google/login.php';
 
 // Nuevo cliente request a Google
 $client = new Google_Client();
