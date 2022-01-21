@@ -57,7 +57,7 @@
             $data = array(
                 "descripcion" => $_POST['descripcion'],
                 "precio" => $_POST['precio'],            
-                "vendedor" => $_SESSION['usuario']['email'],
+                "vendedor" => $email,
                 "foto" => $urlFoto
             );
             
