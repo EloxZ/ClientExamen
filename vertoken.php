@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['token'])) {
     
-    $tokenJson = json_encode($_SESSION['token']);
+    $tokenJson = json_decode($_SESSION['token']);
     //var_dump($tokenJson);
     echo $tokenJson->accessToken;
 
