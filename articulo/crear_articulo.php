@@ -14,7 +14,6 @@
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $file = $_FILES['imagen'];
-        $id = $_POST['id'];
 
 
         $file_size = $file['size'];
@@ -80,7 +79,7 @@
 
 <h1>Publicar articulo</h1>
 
-<form action="crear_articulo.php" method="POST">
+<form action="crear_articulo.php" method="POST" enctype="multipart/form-data">
     <input placeholder="Descripción" name="descripcion" required>
     <input placeholder="Precio de salida" name="precio" required>
     <input type="file" name="imagen" type="image/jpeg, image/jpg, image/png">
