@@ -9,7 +9,8 @@ if (!isset($_SESSION['token'])) {
         );
         
         $headers = array (
-            'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0'
+            'Authorization: Basic YXBwbGljYXRpb246c2VjcmV0',
+            'Content-Type: application/x-www-form-urlencoded'
         );
 
         $ch = curl_init('https://examenserver.herokuapp.com/oauth/token');
